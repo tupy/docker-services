@@ -26,4 +26,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  config.vm.define "mysql" do |mysql|
+    mysql.vm.provider "docker" do |d|
+      d.vagrant_vagrantfile = "./boot2docker/Vagrantfile"
+      d.image = "tutum/mysql"
+      d.name = "mysql"
+      d.ports = ["3306:3306"]
+    end
+  end
+
 end
