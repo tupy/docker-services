@@ -35,4 +35,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  # https://github.com/tutumcloud/tutum-docker-memcached
+  config.vm.define "memcached" do |memcached|
+    memcached.vm.provider "docker" do |d|
+      d.vagrant_vagrantfile = "./boot2docker/Vagrantfile"
+      d.image = "tutum/memcached"
+      d.name = "memcached"
+      d.ports = ["11211:11211"]
+    end
+  end
+
+
 end
