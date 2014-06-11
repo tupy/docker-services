@@ -58,5 +58,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  # https://github.com/tutumcloud/tutum-docker-elasticsearch
+  config.vm.define "elasticsearch" do |elasticsearch|
+    elasticsearch.vm.provider "docker" do |d|
+      d.vagrant_vagrantfile = "./boot2docker/Vagrantfile"
+      d.image = "tutum/elasticsearch"
+      d.name = "elasticsearch"
+      d.ports = ["9200:9200"]
+    end
+  end
 
 end
