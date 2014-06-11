@@ -48,5 +48,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  # https://github.com/tutumcloud/tutum-docker-mongodb
+  config.vm.define "mongodb" do |mongodb|
+    mongodb.vm.provider "docker" do |d|
+      d.vagrant_vagrantfile = "./boot2docker/Vagrantfile"
+      d.image = "tutum/mongodb"
+      d.name = "mongodb"
+      d.ports = ["27017:27017"]
+    end
+  end
+
 
 end
