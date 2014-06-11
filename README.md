@@ -11,6 +11,7 @@ Services
 - [Redis](http://redis.io/)
 - [MongoDB](http://www.mongodb.org/)
 - [Elasticsearch](http://www.elasticsearch.org/)
+- [InfluxDB](http://influxdb.com/)
 
 Usage
 -----

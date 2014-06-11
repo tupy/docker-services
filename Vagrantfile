@@ -68,4 +68,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  # https://github.com/tutumcloud/tutum-docker-influxdb
+  config.vm.define "influxdb" do |influxdb|
+    influxdb.vm.provider "docker" do |d|
+      d.vagrant_vagrantfile = "./boot2docker/Vagrantfile"
+      d.image = "tutum/influxdb"
+      d.name = "influxdb"
+      d.ports = ["8083:8083","8086:8086","8090:8090","8099:8099"]
+    end
+  end
+
+
 end
