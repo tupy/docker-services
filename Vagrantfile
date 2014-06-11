@@ -5,6 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+  # https://github.com/tutumcloud/tutum-docker-redis
   config.vm.define "redis" do |redis|
     redis.vm.provider "docker" do |d|
       d.vagrant_vagrantfile = "./boot2docker/Vagrantfile"
@@ -14,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  # https://github.com/tutumcloud/tutum-docker-rabbitmq
   config.vm.define "rabbitmq" do |rabbitmq|
     rabbitmq.vm.provider "docker" do |d|
       d.vagrant_vagrantfile = "./boot2docker/Vagrantfile"
@@ -26,6 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  # https://github.com/tutumcloud/tutum-docker-mysql
   config.vm.define "mysql" do |mysql|
     mysql.vm.provider "docker" do |d|
       d.vagrant_vagrantfile = "./boot2docker/Vagrantfile"
